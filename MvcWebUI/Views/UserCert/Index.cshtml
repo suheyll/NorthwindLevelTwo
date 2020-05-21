@@ -1,0 +1,21 @@
+﻿@model UserCertViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Sertifikasyonlar</h2>
+
+<table class="table table-responsive">
+    @foreach (var cert in Model.Certs)
+    {
+        <tr>
+            <td>@cert.Name</td>
+            <td>@cert.Details</td>
+  
+            <td><a class="btn btn-sm btn-success" asp-controller="Cart" asp-action="AddToCart" asp-route-productId="">Sepete Ekle</a></td>
+        </tr>
+    }
+
+</table>

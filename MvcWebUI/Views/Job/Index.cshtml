@@ -1,0 +1,26 @@
+﻿@model JobListViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Jobs</h2>
+
+<table class="table table-responsive">
+    @foreach (var job in Model.Jobs)
+    {
+    <tr>
+        <td>@job.Id</td>
+        <td>@job.Name</td>
+        <td>@job.Cert</td>
+        <td>@job.Condition</td>
+        <td>@job.Details</td>
+        <td>@job.Term</td>
+        <td><a class="btn btn-sm btn-success" asp-controller="Job" asp-action="Delete" asp-route-Id="@job.Id">Sil</a></td>
+        <td><a class="btn btn-sm btn-success" asp-controller="Job" asp-action="Edit" asp-route-Id="@job.Id">Düzenle</a></td>
+        <td><a class="btn btn-sm btn-success" asp-controller="Job" asp-action="Edit" asp-route-Id="@job.Id">Başvur</a></td>
+    </tr>
+    }
+
+</table>

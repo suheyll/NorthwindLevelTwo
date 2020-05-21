@@ -1,0 +1,25 @@
+﻿@model CertListViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Certs</h2>
+<table class="table table-responsive">
+    @foreach (var cert in Model.Certs)
+    {
+        <tr>
+            <td>@cert.Id</td>
+            <td>@cert.Name</td>
+            <td>@cert.Data</td>
+            <td>@cert.Details</td>
+            <td>@cert.Link</td>
+            <td>@cert.Questions</td>
+            <td><a class="btn btn-sm btn-success" asp-controller="Job" asp-action="Delete" asp-route-Id="@cert.Id">Sil</a></td>
+            <td><a class="btn btn-sm btn-success" asp-controller="Cert" asp-action="Edit" asp-route-Id="@cert.Id">Düzenle</a></td>
+            <td><a class="btn btn-sm btn-success" asp-controller="Job" asp-action="Edit" asp-route-Id="@cert.Id">Başvur</a></td>
+        </tr>
+    }
+
+</table>

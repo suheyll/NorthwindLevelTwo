@@ -1,0 +1,20 @@
+﻿@model CertListViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>title</h2>
+<h2>Edit</h2>
+<form asp-controller="Cert" asp-action="Edit" asp-route-Id="@Model.Cert.Id" asp-route-name="name" asp-route-term="details" method="post">
+    <div class="form-group">
+        <label asp-for="Cert.Name">Name</label>
+        <input asp-for="Cert.Name" value="@Model.Cert.Name" class="form-control" name="name" placeholder="Name" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Cert.Details">Cert</label>
+        <input asp-for="Cert.Details" value="@Model.Cert.Details" class="form-control" name="details" placeholder="Details" />
+    </div>
+    <input type="submit" value="Edit" class="btn btn-success btn-group-sm" />
+</form>

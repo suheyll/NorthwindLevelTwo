@@ -1,0 +1,20 @@
+﻿@using Microsoft.EntityFrameworkCore.Infrastructure
+@model JobListViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Edit</h2>
+<form asp-controller="Job" asp-action="Edit" asp-route-Id="@Model.Job.Id" asp-route-name="name" asp-route-term="term" method="post">
+    <div class="form-group">
+        <label asp-for="Job.Name">Name</label>
+        <input asp-for="Job.Name" value="@Model.Job.Name"  class="form-control" name="name" placeholder="userName" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Job.Term">Term</label>
+        <input asp-for="Job.Term" value="@Model.Job.Term" class="form-control" name="term" placeholder="password" />
+    </div>
+    <input type="submit" value="Edit" class="btn btn-success btn-group-sm" />
+</form>
