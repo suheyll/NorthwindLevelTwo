@@ -19,7 +19,7 @@ namespace MvcWebUI.Controllers
             _productService = productService;
         }
 
-        [Authorize(Roles = "admin")]
+        [Authorize]
         public IActionResult index(int category)
         {
             var model = new ProductListViewModel
